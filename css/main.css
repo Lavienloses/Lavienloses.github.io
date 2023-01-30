@@ -1,0 +1,1271 @@
+@charset "UTF-8";
+
+/************基本設定************/
+html {
+    scroll-behavior: smooth;
+    background-color: #f8f3ee;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    font-family: 游ゴシック, 游ゴシック体;
+
+}
+
+/************基本設定終わり************/
+
+
+.key_visual {
+    width: 100%;
+    display: flex;
+}
+
+.visual {
+    width: calc(100% / 3);
+    height: 100vh;
+}
+
+
+/*キービジュアルアニメーション設定*/
+
+.visual {
+    overflow: hidden;
+    /* position: relative;	相対位置指定 */
+}
+
+.visual .v_hover {
+    font-size: 130%;
+    text-align: center;
+    padding-top: 80px;
+    color: #fff;
+}
+
+.visual .visual_mask {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /* 絶対位置指定 */
+    top: 0;
+    left: 0;
+    opacity: 0;
+    /* マスクを表示しない */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* マスクは半透明 */
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+.visual:hover .visual_mask {
+    opacity: 1;
+    /* マスクを表示する */
+    padding-top: 500px;
+}
+
+/*キービジュアルホバーアニメーション設定*/
+
+
+/* .k_2:hover {
+    background-color: black;
+    opacity: 0.3;
+    transition: 1s;
+} */
+
+
+
+
+
+
+
+
+.k_1 {
+    /* background-color: black; */
+    /* filter: brightness(50%); */
+    position: fixed;
+    left: 0;
+    transition: 1s;
+    /*javascript色変えのためのやつ*/
+}
+
+/*k_1背景暗くしています*/
+/* .k_1::before,
+.k_3::before {
+    content: '';
+    background-color: black;
+    opacity: 70%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+} */
+
+/*k_1背景暗くしています*/
+
+
+.k_1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /*画面いっぱいか，containか迷う*/
+}
+
+.k_2 {
+    /* background-color: orange; */
+    position: relative;
+    margin: 0 auto;
+    height: 5000px;
+}
+
+.k_3 {
+    background-color: rgb(0, 89, 255);
+    position: fixed;
+    right: 0;
+    transition: 1s;
+}
+
+.k_3 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.k_2 {
+    scroll-snap-type: y;
+    overflow: auto;
+    /* height: 100vh; */
+}
+
+/*画面中央スクロールバー非表示*/
+.k_2::-webkit-scrollbar {
+    display: none;
+}
+
+/*画面中央スクロールバー非表示*/
+
+
+.content {
+    width: 100%;
+    height: 100vh;
+    scroll-snap-align: start;
+    position: relative;
+}
+
+/* .c_1 {
+    background-color: aqua;
+} */
+
+.c_2 {
+    background-color: blueviolet;
+}
+
+.c_3 {
+    background-color: khaki;
+}
+
+
+
+.key_visual {
+    text-align: center;
+}
+
+.key_word {
+    position: fixed;
+    font-size: 30px;
+    z-index: 100;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.key_word {
+    width: 30rem;
+    position: fixed;
+    font-size: 35px;
+    letter-spacing: 0.25em;
+    z-index: 100;
+    left: 50%;
+    top: 45%;
+}
+
+.key_word span {
+    margin-right: -1.25rem;
+}
+
+
+.scroll_box span {
+    position: absolute;
+    left: -15px;
+    top: -50px;
+    color: black;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+}
+
+.scroll_box2 span::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1px;
+    height: 30px;
+    background: black;
+    animation: anime 1s ease-in-out infinite;
+    opacity: 0;
+}
+
+@keyframes anime {
+    0% {
+        height: 0;
+        top: 30px;
+        /*ここ０〜３０にしたら間開けれた*/
+        opacity: 0;
+    }
+
+    30% {
+        height: 40px;
+        /*ここいじると長さ変えれる*/
+        opacity: 1;
+    }
+
+    100% {
+        height: 0;
+        top: 70px;
+        /*０％の調整でここもいじった方が良い，いじんないと，したから競り上がるっけ*/
+        opacity: 0;
+    }
+}
+
+
+/*スクロールアニメーション2つ目自作して，，，*/
+.scroll_box2 {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    height: 100px;
+    transform: translate(-50%);
+    display: inline-block;
+
+}
+
+.s,
+.c,
+.r,
+.o,
+.l,
+.l,
+.l_2 {
+    animation: s_anime 1.5s ease-in infinite;
+    display: inline-block;
+}
+
+.c {
+    animation-delay: 0.2s;
+}
+
+.r {
+    animation-delay: 0.3s;
+}
+
+.o {
+    animation-delay: 0.4s;
+}
+
+.l {
+    animation-delay: 0.5s;
+}
+
+.l_2 {
+    animation-delay: 0.6s;
+}
+
+@keyframes s_anime {
+    0% {
+        transform: translateY(0);
+    }
+
+    30% {
+        transform: translateY(20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/*スクロールアニメーション自作部門終了*/
+
+
+
+
+
+
+
+
+
+.k_4 {
+    background-color: rgb(255, 3, 3);
+    position: fixed;
+    right: 0;
+    transition: 1s;
+}
+
+/*リンク飛ぶためだけのやつ,枠全体リンク済み*/
+.link_a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+/**********work_guitar.html設定***********/
+
+header {
+    /* width: 300px;
+    height: 65px; */
+
+    width: 55px;
+    height: 55px;
+    right: 9vw;
+
+
+    box-sizing: border-box;
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.456);
+    z-index: 9999;
+    /* padding: 0 1em; */
+    /* left: 0; */
+    /* right: 0; */
+    /* margin: auto; */
+    top: 2em;
+    /* border-radius: 50%; */
+
+    text-align: center;
+    overflow: hidden;
+    transition: .5s;
+    /*メニュー収納時のだらしなさ調整，早めにしまう*/
+}
+
+header:hover {
+    height: 50vh;
+    background-color: rgba(0, 0, 0, 0.600);
+
+
+    width: 80vw;
+    /* border-radius: 20px; */
+    transition: height .5s, width .5s;
+    /*調整すると，出方いじれる*/
+    margin: auto;
+}
+
+
+#header_box {
+    display: none;
+    /*メニュー表示*/
+}
+
+.menu_icon {
+    color: pink;
+    font-size: 1rem;
+    display: block;
+}
+
+#header_box span {
+    display: none;
+}
+
+
+header:hover>#header_box {
+    display: block;
+}
+
+
+header:hover>.menu_icon {
+    display: none;
+}
+
+header:hover>#header_box span {
+    display: block;
+    color: white;
+}
+
+/* header:hover span {
+    color: white;
+} */
+
+
+#header_box span {
+    font-size: 2rem;
+    line-height: 2em;
+}
+
+
+
+
+.menu_box {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+
+.menu_left,
+.menu_center,
+.menu_right {
+    width: calc(100%/3);
+}
+
+.menu_li {
+    padding: 15px 20px;
+    text-align: left;
+    transition: .3s;
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+}
+
+
+
+.menu_li:hover {
+    /* background-color: rgba(255, 255, 255,0.2); */
+    border-bottom: 3px solid rgba(255, 255, 255, 1);
+    transition: .4s;
+}
+
+.menu_li a {
+    /* font-size: 1.3rem; */
+    font-size: 1.5vw;
+    /* font-size: 20px; */
+    color: white;
+    display: block;
+}
+
+.menu_li.weight {
+    padding: 1.5rem 1.2rem 1.8rem 1.2rem;
+}
+
+.menu_li.weight a {
+    font-weight: bold;
+    font-size: 2.5vw;
+    white-space: nowrap;
+}
+
+
+
+
+
+/******main設定******/
+
+/******キービジュアル＆重ねる文字設定******/
+.l_key_img {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 40vw;
+    /*横幅可変に合わせるため，vhではなくvwで対応*/
+    display: block;
+    position: relative;
+}
+
+.l_key_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.l_key_img span {
+    position: absolute;
+    top: 65%;
+    /* left: 50%; */
+    left: 2vw;
+    color: white;
+    font-weight: bold;
+    font-size: 7vw;
+    /*remだと可変しない，vwで対応しました*/
+    white-space: nowrap;
+
+    text-shadow: 10px 10px 0px #00000070;
+}
+
+/******キービジュアル＆重ねる文字設定終わり******/
+
+/******main_content設定******/
+.main_content {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8em;
+    padding: 2em 5vw;
+}
+
+.hl1 {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.h1_explanetion {
+    text-align: center;
+    font-size: 1.25rem;
+    padding: 2em 0;
+}
+
+/*制作工程目次欄設定*/
+#all_box {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+}
+
+.hl2 {
+    /* width: 60%; */
+    font-size: 1.5rem;
+    margin-top: 4em;
+    padding: 1em 0 0.8em .5em;
+    background: rgb(152, 99, 34);
+    color: white;
+}
+
+/*目次左側大枠設定*/
+.left_box {
+    width: 80%;
+    margin-right: 1em;
+}
+
+/*order_box設定*/
+.order_box {
+    margin-top: 2em;
+    border: 1px solid black;
+    background-color: white;
+    /*ページ全体とのコントラスト調整のため*/
+}
+
+.detail {
+    display: flex;
+    flex-wrap: nowrap;
+    /* padding: 2em 3em 4em 3em; */
+    padding: 3vw 2% 3vw 2%;
+    /*いい感じのpadding，これで統一したい*/
+    border-bottom: 3px dotted black;
+    overflow: auto;
+    justify-content: space-between;
+}
+
+.detail:nth-child(1) {
+    padding: 3vw 2% 3vw 2%;
+    /*いい感じのpadding，これで統一したい*/
+}
+
+
+
+.img_box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    padding: 0 1em;
+    /* justify-content: left; */
+    /*左右の空白調整，様子見ていじって*/
+}
+
+.img_box img {
+    max-width: 80%;
+    object-fit: contain;
+    box-shadow: 10px 10px rgb(214 208 193);
+}
+
+.text_box {
+    width: 60%;
+    padding-left: 2%;
+}
+
+.text_box a {
+    text-decoration: 2px solid #ff0000;
+    -webkit-text-decoration: underline red;
+}
+
+.text_box a:hover {
+    transition: 0.5s;
+}
+
+.detail h3 {
+    font-size: 1.5rem;
+}
+
+.detail p {
+    font-size: 1.2rem;
+    margin-top: 1.5em;
+}
+
+.detail ul li {
+    font-size: 0.9rem;
+    padding: 0.5em 0 0.3em 0;
+}
+
+.detail ul li:nth-child(1) {
+    margin-top: 0.8em;
+}
+
+/******目次右側大枠設定******/
+.right_box {
+    border: 2px dotted black;
+    height: fit-content;
+    width: 20%;
+    padding: 2em;
+    /* margin-top: 6em; */
+    margin-top: 8.7em;
+    background-color: white;
+}
+
+/*右メニュー欄設定*/
+.nav_box h4 {
+    font-size: 1.25rem;
+    background-color: white;
+    margin-bottom: 1.2em;
+    font-weight: bold;
+}
+
+.nav_box dl {
+    margin-bottom: 2em;
+}
+
+.nav_box dt {
+    font-size: 0.95rem;
+    background-color: rgb(189, 177, 149);
+    padding: 0.3em 0.3em 0.3em 0em;
+    margin-bottom: 0.8em;
+    font-weight: bold;
+}
+
+.nav_box dd {
+    font-size: 0.95rem;
+    margin-bottom: 0.5em;
+    border-bottom: 1px dashed black;
+    position: relative;
+    vertical-align: middle;
+    padding: 0.5em 0 0.5em 0.7em;
+}
+
+.nav_box dd::before {
+    content: ">";
+    position: absolute;
+    top: 7px;
+    left: 0;
+    color: #986322;
+    font-size: 0.8rem;
+}
+
+/******目次右側大枠設定終わり******/
+
+
+
+
+
+.link_btn {
+    width: 80px;
+    bottom: 3em;
+    right: 5em;
+    padding: 0.4em 1.5em;
+    border: 1px solid black;
+    margin-left: auto;
+}
+
+/*ぱんくずリスト設定*/
+.bread_box {
+    margin-top: 2em;
+    padding: 0.3em 0.2em;
+    background-color: #986322;
+}
+
+.bread_box a {
+    display: initial;
+}
+
+.ol_list {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.ol_list li {
+    font-size: 0.4rem;
+    font-weight: bold;
+    color: white;
+}
+
+.ol_list li::after {
+    content: '>';
+    font-size: 0.5rem;
+    padding-left: 1.3em;
+    padding-right: 1.3em;
+}
+
+.bread_none::after {
+    display: none;
+}
+
+
+
+/******footer設定******/
+footer {
+    margin-top: 12em;
+    padding: 5em 3em 0em 3em;
+    background-color: rgb(152, 99, 34);
+}
+
+footer a {
+    display: block;
+}
+
+
+.footer_box {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 2em;
+}
+
+.f_lbox,
+.f_cbox,
+.f_rbox {
+    width: calc(100% / 3);
+    color: white;
+    /* padding: 2em; */
+    padding: 2em 1em 3em 1em;
+}
+
+
+.f_lbox li a,
+.f_cbox li a,
+.f_rbox li a {
+    font-size: 1rem;
+    /* text-decoration: underline; */
+    border-bottom: 1px solid white;
+    /* margin-bottom: 1.3em; */
+    font-size: 1.15rem;
+}
+
+.f_lbox li a,
+.f_cbox li a,
+.f_rbox li a {
+    padding: 1.3em 2em 0.7em 0em;
+    color: #fff;
+}
+
+
+
+
+.footer_box li::after {
+    margin-bottom: 3em;
+}
+
+footer p {
+    text-align: center;
+    color: white;
+    font-size: 0.8rem;
+    padding: 0.5em;
+}
+
+.footer_box .menu_li.weight {
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+    padding: 0;
+}
+
+.footer_box .menu_li.weight a {
+    padding: 1.5rem 1.2rem 1.8rem 1.2rem;
+}
+
+
+
+.back_btn {
+    width: 50px;
+    height: 50px;
+    border: 2px solid white;
+    border-radius: 0;
+    margin: 0 0 0 auto;
+    color: white;
+    text-align: center;
+    transition: 0.4s;
+}
+
+.back_btn a {
+    display: block;
+}
+
+.back_btn:hover {
+    transform: scale(1.5, 1.5);
+    border-radius: 10px;
+}
+
+
+
+
+
+/* .autoscroll {
+    overflow-y: scroll;
+    max-height: 100vh;
+} */
+
+
+/* .visual {
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh)* 100);
+} */
+
+
+
+
+
+
+
+
+
+/******コンテンツページ２カラム実装中，修正部分もあり，直したら該当箇所へ******/
+
+/*右のサイドバーあるならいらないかな，トップページだけで*/
+header {
+    display: block;
+}
+
+.order_pre p {
+    margin: 2em 0;
+    padding: 1em;
+    font-size: 1.1rem;
+    letter-spacing: 1.3px;
+    line-height: 1.75em;
+}
+
+
+.h1_pre {
+    background-color: rgb(147 133 116);
+    padding: 1.25em 1em;
+    color: white;
+    margin: 0;
+    font-size: 2.2rem;
+    text-align: left;
+}
+
+.h2_pre {
+    margin-top: 5.5em;
+}
+
+
+.left_pre {
+    margin-top: 0;
+}
+
+.detail_pre {
+    display: block;
+    padding-top: 0;
+    margin-top: 5em;
+    text-align: center;
+    font-size: 1.1rem;
+    border-bottom: none;
+    /*邪魔だった*/
+}
+
+.detail_pre img {
+    max-width: 60%;
+    object-fit: contain;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3em;
+}
+
+.detail_pre figcaption {
+    text-align: center;
+    margin: 1em 0 0.3em 0;
+}
+
+blockquote {
+    margin: 3em 0 0em 0;
+}
+
+cite {
+    font-size: 0.7rem;
+    color: #0066cc !important;
+    text-decoration: underline#0066cc !important;
+}
+
+.detail_pre2 {
+    border-bottom: none;
+}
+
+.order_pre {
+    margin-top: 1em;
+}
+
+.order_pre p {
+    text-align: left;
+    text-indent: 1.1rem;
+}
+
+.order_pre ul {
+    width: 20vw;
+    margin: auto;
+    list-style: disc;
+}
+
+.order_pre ul li {
+    padding: 1em 0 0.25em 0;
+    font-weight: bold;
+    text-align: left;
+    max-width: max-content;
+}
+
+
+
+.right_pre {
+    margin-top: 0;
+}
+
+
+
+
+/*次の記事へのリンク枠設定*/
+.next_box {
+    margin-top: 3em;
+    display: flex;
+    width: 100%;
+}
+
+.now_link,
+.next_link {
+    width: 50%;
+    display: block;
+    text-decoration: none;
+    padding: 0.7em 2em;
+    color: red;
+    background-color: white;
+    position: relative;
+}
+
+.now_link:hover,
+.next_link:hover {
+    background-color: antiquewhite;
+}
+
+.now_link {
+    border-top: 1px solid #683b04;
+    padding-left: 3vw;
+}
+
+.now_link::before {
+    position: absolute;
+    content: '';
+    top: 45%;
+    left: 10px;
+    width: 15px;
+    height: 15px;
+    border-top: 2px solid rgb(147 133 116);
+    border-right: 2px solid rgb(147 133 116);
+    -webkit-transform: rotate(225deg);
+    transform: rotate(225deg);
+}
+
+.next_link::before {
+    position: absolute;
+    content: '';
+    top: 45%;
+    right: 10px;
+    width: 15px;
+    height: 15px;
+    border-bottom: 2px solid rgb(147 133 116);
+    border-left: 2px solid rgb(147 133 116);
+    -webkit-transform: rotate(225deg);
+    transform: rotate(225deg);
+}
+
+.now_label,
+.next_label {
+    margin-bottom: 0.5em;
+    font-size: 0.8rem;
+}
+
+.flex_box {
+    display: flex;
+}
+
+.flex_box img {
+    width: 60px;
+    height: auto;
+    object-fit: contain;
+}
+
+.flex_box p {
+    margin: 0 0 0 2em;
+    color: #683b04;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+span a {
+    color: #0066cc !important;
+    text-decoration: underline;
+}
+
+.center {
+    justify-content: center;
+}
+
+.center img {
+    position: relative;
+}
+
+.center img::before {
+    position: absolute;
+    content: '①';
+    top: 0;
+    left: 0;
+}
+
+.text_box p {
+    margin: 0;
+}
+
+.detail.none {
+    border-bottom: none;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.detail.none .img_box {
+    display: block;
+    padding: 30px;
+    width: 32%;
+    background-color: #fff;
+}
+
+.detail.none .img_box img {
+    max-width: 95%;
+    width: 100%;
+}
+
+.detail.none p {
+    margin-top: 1em;
+    text-indent: 0;
+    font-size: 1rem;
+    padding: 0;
+}
+
+.detail.none p {
+    margin-top: 1em;
+    text-indent: 0;
+    font-size: 1rem;
+    padding: 0;
+}
+
+/*下線内verやる時のpの設定だよ*/
+.detail.line_none {
+    border-bottom: none;
+}
+
+.line_p {
+    border-bottom: 4px dotted black;
+}
+
+.line .caution {
+    display: flex;
+    margin: auto;
+    padding: 3em 60px 6em 60px;
+}
+
+.caution {
+    display: flex;
+}
+
+.caution_img {
+    width: calc(100%/2);
+    text-align: center;
+    border-top: 3px dotted red;
+    border-bottom: 3px dotted red;
+    border-right: none;
+}
+
+.caution_img img {
+    width: 70%;
+    height: auto;
+    padding: 1em;
+}
+
+.caution_text {
+    width: calc(100%/2);
+    border-top: 3px dotted red;
+    border-bottom: 3px dotted red;
+    border-left: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: 2px underline red;
+    font-weight: bold;
+}
+
+.caution_text p {
+    margin: 0;
+    padding: 0;
+    text-indent: 0;
+    font-size: 0.9rem;
+}
+
+.img_center {
+    text-align: center;
+    display: block;
+    margin: auto;
+}
+
+
+
+
+
+
+
+/*******ロゴ設定*******/
+
+.rogo_box {
+    width: 250px;
+    height: 70px;
+    /* border: 5px double white; */
+    border-radius: 10%;
+    position: fixed;
+    z-index: 9999;
+    top: 1vw;
+    left: 1vw;
+    transform: scale(1, 1) rotate(0deg);
+
+    transition: .4s;
+}
+
+.rogo_box:hover {
+    transform: scale(1.1, 1.1) rotate(-4deg);
+    transition: .2s;
+}
+
+body {
+    position: relative;
+    font-family: 'linefont';
+    font-weight: 600;
+    font-style: normal;
+}
+
+.rogo {
+    max-width: 100%;
+    height: auto;
+}
+
+.text_box p {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+
+
+.svgimg {
+    display: block;
+    width: 200px;
+    height: 70px;
+    background: transparent url(/rogo/svg/rogo_3_kirigiri_white.svg) no-repeat top center / contain;
+    transition: .3s;
+}
+
+.svg_change {
+    display: block;
+    width: 200px;
+    height: 70px;
+    transition: .3s;
+    background: transparent url(/rogo/svg/rogo_3_kirigiri_black.svg) no-repeat top center / contain;
+}
+
+/*******ロゴ設定*******/
+
+
+
+
+.not_scroll {
+    overflow-y: hidden;
+}
+
+.none_text1 {
+    animation: delete 1s;
+}
+
+@keyframes delete {
+    0% {
+        display: block;
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+@font-face {
+    font-family: 'linefont';
+    src: url("../font/kokkugoshic/font_1_kokugl_1.15_rls.ttf");
+}
+
+
+
+
+
+
+/*******フォントの黒文字の色これでもいいかも*******/
+* {
+    color: #3f3f3f;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .detail {
+        display: block;
+    }
+
+    .img_box {
+        margin: auto;
+    }
+
+    .text_box {
+        width: auto;
+    }
+
+
+
+
+
+
+    .item {
+        width: 100%;
+    }
+
+    .item:not(:last-child) {
+        margin-bottom: 30px;
+    }
+}
