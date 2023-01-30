@@ -155,26 +155,26 @@
 
 
 
-// function sayHello() {
-//   let number = window.scrollY;
-//   const text = document.getElementById('key');
+function sayHello() {
+  let number = window.scrollY;
+  const text = document.getElementById('key');
 
-//   // area.style.overflowY = "hidden";
+  // area.style.overflowY = "hidden";
 
-//   window.scrollBy(0, innerHeight);
+  window.scrollBy(0, innerHeight);
 
-//   // var tc = setTimeout("sayHello()", 1000);
+  // var tc = setTimeout("sayHello()", 1000);
 
-//   if (number >= innerHeight * 2) {
-//     // alert("あああ");
-//     window.scrollTo(0, 0);
-//     // text.style.display = "none";
-//     text.classList.add("none_text1");
-//     // clearTimeout(tc);
-//   }
-// }
+  if (number >= innerHeight * 2) {
+    // alert("あああ");
+    window.scrollTo(0, 0);
+    // text.style.display = "none";
+    text.classList.add("none_text1");
+    // clearTimeout(tc);
+  }
+}
 
-// document.addEventListener('scroll', sayHello);
+document.addEventListener('scroll', sayHello);
 
 //ボタン押してスクロールはできた，
 //画面幅の２倍動いたら，うんこでて，一番上に戻る
