@@ -4,37 +4,46 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>卒研サイト（仮）</title>
+  <title>素人によるギター＆ギターケース制作</title>
   <link href="css/reset.css" rel="stylesheet" type="text/css">
   <link href="css/main.css" rel="stylesheet" type="text/css">
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4JPY5P55CD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-4JPY5P55CD');
+  </script>
 
 
 </head>
 
 
 <body>
-  <main class="autoscroll id-2">
+  <main class="autoscroll" id="id_2">
     <div class="key_visual">
       <!-- <p>
             スクロールりょー
           <span id="scroll-counter"></span>
           </p> -->
-      <div class="visual k_1" id="color">
-        <a href="javascript:void(0);" id="btn" onclick="sayHello()">ボタンボタン</a>
-
-        <!-- <a href="work_process.html#make_guitar" class="link_a"></a> -->
+      <div class="visual k_1" id="k1">
+        <!-- <a href="javascript:void(0);" id="btn" onclick="sayHello()">ボタンボタン</a> -->
         <img src="img/top/guitar.png">
         <div class="k_shadow"></div>
-        <!-- <div class="visual_mask"> -->
-        <!-- <div class="v_hover"> -->
-        <!-- </div> -->
+        <div class="visual_mask" id="mask">
+          <a href="work_process.html#make_guitar" class="link_a"></a>
+        </div>
+        <!-- <div class="v_hover">
+        </div> -->
         <!-- </div> -->
       </div>
 
 
       <div class="visual k_2" id="scrollpage">
-        <p class="key_word" id="key">
+        <!-- <p class="key_word" id="key">
           <span id="s_1">
             ギター<br>×<br>伝統工芸<br>
           </span>
@@ -46,7 +55,7 @@
           <span id="s_3">
 
           </span>
-        </p>
+        </p> -->
 
         <!-- <div class="scroll_box">
                 <span>scroll</span>
@@ -55,6 +64,11 @@
 
 
         <div class="content c_1">
+          <img src="./rogo/svg/rogo_3_kirigiri_black.svg" class="index_rogo">
+          <span class="s_2">
+            〜素人によるギター＆ギターケース制作〜
+          </span>
+
           <p class="scroll_box2">
             <span class="s">s</span>
             <span class="c">c</span>
@@ -66,25 +80,49 @@
 
         </div>
         <div class="content c_2" id="event_div1">
-          <p1 class="content_text1" id="pp">
-            このサイトは，自主制作で制作したエレキギターと，ギターケースについて制作の記録をまとめたものです．
-          </p1>
+          <p class="content_t text1" id="pp">
+            伝統技術である<br>拭き漆と<br>寄木細工を使って
+          </p>
         </div>
         <div class="content c_3" id="event_div2">
-          <p class="">
-            素人が作っているので，正確な情報ではありません．しかし，作った人間にしかわからないことを伝えられればと思います．
+          <p class="content_t text2">
+            エレキギターと<br>そのケースを<br>作成しました．
+
+          </p>
+        </div>
+
+        <div class="content c_4" id="event_div3">
+          <p class="content_t text3">
+            このサイトは<br>エレキギターとケースの<br>制作過程をまとめた<br>サイトとなっています。
+          </p>
+          <p class="content_t text4">
+            <b>「ギターを作ってみたい！」</b>
+            <br>
+            <b>「何か作ってみたい！！」</b>
+          </p>
+          <p class="content_t text5">
+            そんな方の参考になれば幸いです．
           </p>
         </div>
         <!-- <div class="visual_mask"> -->
         <!-- <div class="v_hover"> -->
         <!-- </div> -->
         <!-- </div> -->
+
+        <div class="content c_1">
+          <img src="/rogo/svg/rogo_3_kirigiri_black.svg" class="index_rogo">
+          <span class="s_2">
+            〜素人によるギター＆ギターケース制作〜
+          </span>
+        </div>
       </div>
 
-      <div class="visual k_3" id="first">
-        <a href="work_process.html#make_case" class="link_a"></a>
+      <div class="visual k_3" id="k3">
+
         <img src="img//top/case.jpeg">
-        <!-- <div class="visual_mask"> -->
+        <div class="visual_mask" id="mask2">
+          <a href="work_process.html#make_case" class="link_a"></a>
+        </div>
         <!-- <div class="v_hover"> -->
         <!-- </div> -->
         <!-- </div> -->
@@ -95,7 +133,9 @@
 
   <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
   <!-- <script src="js/autoscroll.js"></script> -->
-  <script src="js/script.js"></script>
+  <script src="./js/script.js"></script>
 </body>
+
+
 
 </html>
