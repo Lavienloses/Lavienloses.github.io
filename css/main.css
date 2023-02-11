@@ -1303,7 +1303,7 @@ body {
     display: block;
     width: 200px;
     height: 70px;
-    background: transparent url(../rogo/svg/rogo_3_kirigiri_white.svg) no-repeat top center / contain;
+    background: transparent url(.././rogo/svg/rogo_3_kirigiri_white.svg) no-repeat top center / contain;
     transition: .3s;
 }
 
@@ -1312,7 +1312,7 @@ body {
     width: 200px;
     height: 70px;
     transition: .3s;
-    background: transparent url(../rogo/svg/rogo_3_kirigiri_black.svg) no-repeat top center / contain;
+    background: transparent url(.././rogo/svg/rogo_3_kirigiri_black.svg) no-repeat top center / contain;
 }
 
 /*******ロゴ設定*******/
